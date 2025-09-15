@@ -1,0 +1,24 @@
+/maskdino_ros2:
+  ros__parameters:
+    # confidence threshold
+    conf_thresh: 0.7
+
+    ## dino files
+    config_path: "/source/2025-02-13_18-36/config.yaml"
+    weights_path: "/source/2025-02-13_18-36/model_final.pth"
+    labels_path: "/source/2025-02-13_18-36/instances_default.json"
+
+    ## topics
+    # image topic
+    img_topic: "/camera/color/image_raw"
+
+    # depth topic for pose estimation
+    depth_topic: "/camera/depth/points"
+
+    # topic of the output
+    out_topic: "/maskdino_ros2/detection"
+
+    target_frame_id: 'camera_link'
+
+    #visualize
+    visualize: True
