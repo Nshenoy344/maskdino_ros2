@@ -1,4 +1,4 @@
-\# maskdino\_ros2
+# maskdino_ros2
 
 
 
@@ -8,7 +8,7 @@ A ROS 2 (Humble) wrapper around MaskDINO for real-time instance segmentation and
 
 
 
-\## Quick start (Docker)
+## Quick start (Docker)
 
 
 
@@ -18,13 +18,13 @@ The included Docker setup builds a container with ROS 2 Humble, PyTorch, Detectr
 
 ```bash
 
-cd maskdino\_ros2/docker
+cd maskdino_ros2/docker
 
 docker compose build
 
 docker compose up -d
 
-docker exec -it maskdino\_ros2 bash
+docker exec -it maskdino_ros2 bash
 
 ```
 
@@ -38,9 +38,9 @@ docker exec -it maskdino\_ros2 bash
 
 |--------------------|---------------------------------------|--------------------------------------------|
 
-| `../maskdino\_ros\_pkg/` | `/root/ros2\_ws/src/maskdino\_ros\_pkg` | Live-editable ROS 2 package source          |
+| `../maskdino_ros_pkg/` | `/root/ros2_ws/src/maskdino_ros_pkg` | Live-editable ROS 2 package source          |
 
-| `../example\_imgs`  | `/imgs`                               | Sample images                               |
+| `../example_imgs`  | `/imgs`                               | Sample images                               |
 
 | `../outputs/`       | `/outputs/`                           | Training/inference outputs                  |
 
@@ -48,11 +48,11 @@ docker exec -it maskdino\_ros2 bash
 
 
 
-The container also requires an X server for visualization windows and NVIDIA runtime support (`runtime: nvidia`), and shares the host network (`network\_mode: host`) so ROS 2 discovery works transparently.
+The container also requires an X server for visualization windows and NVIDIA runtime support (`runtime: nvidia`), and shares the host network (`network_mode: host`) so ROS 2 discovery works transparently.
 
 
 
-On first start, `nvidia\_entrypoint.sh` builds MaskDINO's MSDeformAttn CUDA pixel-decoder extension (this step can't be done at image-build time and must run once the GPU runtime is available).
+On first start, `nvidia_entrypoint.sh` builds MaskDINO's MSDeformAttn CUDA pixel-decoder extension (this step can't be done at image-build time and must run once the GPU runtime is available).
 
 
 
@@ -62,35 +62,35 @@ Inside the container, build and source the workspace, then launch the node:
 
 ```bash
 
-cd /root/ros2\_ws
+cd /root/ros2_ws
 
 colcon build
 
 source install/setup.bash
 
-ros2 launch maskdino\_ros\_pkg mask\_dino\_ros\_launch.py
+ros2 launch maskdino_ros_pkg mask_dino_ros_launch.py
 
 ```
 
 
 
-\## Configuration
+## Configuration
 
 
 
-Parameters live in `maskdino\_ros\_pkg/params/params.yaml` and are loaded by the launch file.
+Parameters live in `maskdino_ros_pkg/params/params.yaml` and are loaded by the launch file.
 
 
 
 
 
-\## Running
+## Running
 
 
 
 ```bash
 
-ros2 launch maskdino\_ros\_pkg mask\_dino\_ros\_launch.py
+ros2 launch maskdino_ros_pkg mask_dino_ros_launch.py
 
 ```
 
