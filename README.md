@@ -31,20 +31,11 @@ docker exec -it maskdino_ros2 bash
 
 
 `docker-compose.yml` mounts the following host directories into the container, so create them alongside the repo before starting:
-
-
-
-| Host path         | Container path                        | Purpose                                   |
-
-|--------------------|---------------------------------------|--------------------------------------------|
-
-| `../maskdino_ros_pkg/` | `/root/ros2_ws/src/maskdino_ros_pkg` | Live-editable ROS 2 package source          |
-
-| `../example_imgs`  | `/imgs`                               | Sample images                               |
-
-| `../outputs/`       | `/outputs/`                           | Training/inference outputs                  |
-
-| `../source/`        | `/source/`                            | Model weights, config, and labels (see `params.yaml`) |
+ 
+- `../maskdino_ros_pkg/` → `/root/ros2_ws/src/maskdino_ros_pkg` — live-editable ROS 2 package source
+- `../example_imgs` → `/imgs` — sample images
+- `../outputs/` → `/outputs/` — training/inference outputs
+- `../source/` → `/source/` — model weights, config, and labels (see `params.yaml`)
 
 
 
